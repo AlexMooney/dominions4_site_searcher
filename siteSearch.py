@@ -45,8 +45,8 @@ for site in unknownSites:
     site['chance'] = site['rarity']*normCoeff
 
 newNorm = 1 - SITEFREQ + sum([site['chance'] for site in unknownSites])
-U_SITEFREQ = SITEFREQ / newNorm
-print(U_SITEFREQ)
+complement = (1 - SITEFREQ) / newNorm
+print(1-complement)
 for site in unknownSites:
     site['chance'] /= newNorm
 
